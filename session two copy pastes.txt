@@ -1,0 +1,214 @@
+# 1 History of Congestive HF basic
+
+score=0
+
+CHFx = input('Does your patient have a history of congestive heart failure? (y/n): ')
+
+if CHFx =='y':
+    score = score + 1
+
+print(score)
+
+----------------------------
+
+# 2 History of Congestive HF while loop
+
+score=0
+
+CHFx = input("Does the patient have a history of congestive heart failure? [y/n]")
+
+while CHFx != "y" and CHFx != "n":
+    print ("Please answer the question by typing in y or n and press enter")
+    CHFx = input("Does the patient have a history of congestive heart failure? [y/n]")
+
+if CHFx == "y":
+    score = score +1
+
+print(score)
+
+----------------------------
+# 3 Old gender code
+
+gender = input("Is the patient female? [y/n]")
+
+if gender == "y":
+    score = score + 1
+
+print(score)
+
+----------------------------
+
+# 4 Gender code while loop
+
+score=0
+
+gender = input("Is the patient female? [y/n]")
+
+while gender != "y" and gender != "n":
+    print ("Please answer the question by typing in y or n and press enter")
+    CHFx = input("Is the patient female? [y/n]")
+
+if gender == "y":
+    score = score +1
+
+print(score)
+
+
+----------------------------
+# 5 example adding function
+
+def add_sub(a,b):
+    c = a + b
+    c = c - b
+    return c
+
+print (add_sub(3, 4))
+
+print (add_sub(9, 7))
+
+print (add_sub(3, 3))
+
+
+----------------------------
+
+# 5 example averaging function
+
+def average(x,y,z):
+    w = (x+y+z)/3
+    return w
+
+a = int(input("first number"))
+b = int(input("second number"))
+c = int(input("third number"))
+
+print(average(a, b, c))
+
+----------------------------
+# 6 history function
+
+# this is the function
+
+def historyX(x):
+    xRiskStatus = input("Does the patient have the following risk factor "+ x)
+    
+    while xRiskStatus != "y" and xRiskStatus != "n":
+        print ("Please answer the question by typing in y or n and press enter")
+        xRiskStatus = input("Does the patient have a history of ?"+ x)
+        
+    if xRiskStatus == "y":
+        riskadd = 1
+    else:
+        riskadd = 0
+    return riskadd
+
+# we can call on historyX whenever we want now!
+
+score = 0
+score = score + historyX("Has Congestive Heart failure")
+print(score)
+
+----------------------------
+
+#7 a recommendation based on a score (example)
+
+
+#example scores and gender
+
+score = 1
+gender = "y"
+
+
+if score == 0:
+    recc = "No anticoagulation is required at this time"
+elif gender == 'y':
+    if score == 1:
+        recc = "No anticoagulation is required at this time"
+    elif score == 2:
+        recc = "Consider Anti-coagulation if appropriate"
+    else:
+        recc = "Prescribe Anticoagulation"
+elif score == 1:
+    recc = "Consider Anti-coagulation if appropriate"
+else:
+    recc = "Prescribe Anti-coagulation"
+
+print(recc)
+
+
+----------------------------
+
+#8 Final full working script
+
+#Functional Script for CHA2DS2-VASc calculator
+
+print ("This is the CHA2DS2-VASc Score Calculator. This tool is indicated as a decision aid with regards to anticoagulation in persons presenting with Atrial fibrillation (AF). Input the following patient demographics to use the calculator")
+
+score = 0
+
+age = int(input("How old is the patient? "))
+
+if 65 <= age < 75:
+    score = score + 1
+elif age >= 75:
+    score = score + 2
+
+gender = input("Is the patient female? [y/n]")
+
+while gender != "y" and gender != "n":
+    print ("Please answer the question by typing in y or n and press enter")
+    gender = input("Is the patient female? [y/n]")
+
+if gender == "y":
+    score = score + 1
+
+def historyX(x):
+    riskadd = None
+    risk = input(f"Does the patient have the following risk factor? {x}")
+    while risk != "y" and risk != "n":
+        print ("Please answer the question by typing in y or n and press enter")
+        risk = input(f"Does the patient have a history of {x}?")
+    if risk == "y":
+        riskadd = 1
+    else:
+        riskadd = 0
+    return riskadd
+
+score = score + historyX("Has Congestive Heart failure")
+score = score + historyX("Has Hypertension")
+score = score + historyX("Has Vascular Disease")
+score = score + historyX("has Diabetes")
+
+thromboembolism_History = input("Does the patient have history of stroke/TIA/thromboembolism?")
+while thromboembolism_History != "y" and thromboembolism_History != "n":
+    print ("Please answer the question by typing in y or n and press enter")
+    thromboembolism_History = input("Does patient have history of stroke/TIA/thromboembolism?")
+
+if thromboembolism_History == "y":
+    score = score + 2
+
+recc = None
+if score == 0:
+    recc = "No anticoagulation is required at this time"
+elif gender == 'y':
+    if score == 1:
+        recc = "No anticoagulation is required at this time"
+    elif score == 2:
+        recc = "Consider Anti-coagulation if appropriate"
+    else:
+        recc = "Prescribe Anticoagulation"
+elif score == 1:
+    recc = "Consider Anti-coagulation if appropriate"
+else:
+    recc = "perscribe Anti-coagulation"
+
+riskscore = [0.3,0.9,2.9,4.6,6.7,10.0,13.6,15.7,15.2,17.4]
+
+#use of f strings helps you clean up code by using functions and variables within strings which would otherwise not work
+
+print (f"The score of your patient is {score}. This means there is a {riskscore[score]} percent chance of stroke in the next year")
+
+print (recc)
+
+
+
+

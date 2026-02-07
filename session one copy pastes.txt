@@ -1,0 +1,115 @@
+Code to copy paste
+
+----------------------------
+
+# 1 Declaring variables
+
+myFavouriteNum= 1
+numOfHumanEyes = 2
+h2o_density_in_grams_per_litre = 1000
+
+
+print(myFavouriteNum)
+
+----------------------------
+
+# 2 integers 
+myFavouriteNum = 1
+
+# floating point numbers
+ptHeightMetres= 1.72
+
+# exponentials
+avogadro = 6.023e23
+
+# String
+myName = "Jeffrey"
+
+
+
+print(myName, "is number" ,myFavouriteNum)
+
+----------------------------
+
+
+# 3 Calculating a sum
+
+a = 6
+b = 3
+
+c = a+b
+
+print(c)
+
+
+# calculating a mean
+
+a = 6
+b = 3
+c = 9
+
+mean = (a+b+c)/3
+
+print(mean)
+
+----------------------------
+# 4 if elif else example - your height vs Tom Cruise
+
+heightCm = …
+
+
+if heightCm == 172:
+   heightComment = 'Same height as Tom Cruise'
+elif heightCm > 172:
+    heightComment = 'Taller than Tom Cruise'
+else:
+    heightComment = 'Shorter than Tom Cruise'
+
+
+print(heightComment)
+
+
+----------------------------
+
+# 5 Input function - your name
+
+name = input("What is your name?")
+
+
+print("your name is" ,name)
+
+----------------------------
+
+# 6 CHADSVASC (age and gender)
+
+score = 0
+
+age = int(input("How old is the patient? "))
+
+if 65 <= age < 75:
+    score = score + 1
+elif age >= 75:
+    score = score + 2
+
+gender = input("Is the patient female? [y/n]")
+
+while gender != "y" and gender != "n":
+    print ("Please answer the question by typing in y or n and press enter")
+    gender = input("Is the patient female? [y/n]")
+
+if gender == "y":
+    score = score + 1
+
+print('running total score is', score)
+
+----------------------------
+
+
+
+
+
+----------------------------
+
+
+
+
