@@ -22,7 +22,7 @@ By the end of the session, students will have built a working BMI Calculator tha
 Students don't need to install anything. Share this link and they can work directly in their browser:
 
 ```
-https://colab.research.google.com/github/4dw1tz/UoB-MedTEC-Python-Workshop/blob/main/student_workbook.ipynb
+https://colab.research.google.com/github/4dw1tz/UoB-MedTEC-Python-Workshop/blob/BAMSoc/student_workbook.ipynb
 ```
 
 They'll need a Google account to save their own copy.
